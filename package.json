@@ -1,0 +1,19 @@
+{
+  "name": "lucide-ripple",
+  "version": "0.0.0",
+  "description": "Lucide Icons for Ripple JS",
+  "scripts": {
+    "icons:sync": "git submodule update --remote --merge .upstream/lucide",
+    "test": "echo \"No test specified\"",
+    "site": "pnpm --filter=./site"
+  },
+  "keywords": [],
+  "author": "anubra266",
+  "license": "ISC",
+  "packageManager": "pnpm@9.15.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "@lucide/build-icons": "patches/@lucide__build-icons.patch"
+    }
+  }
+}

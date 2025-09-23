@@ -1,0 +1,39 @@
+{
+  "name": "lucide-ripple",
+  "version": "0.0.1",
+  "description": "Lucide Icons for Ripple JS",
+  "keywords": [
+    "js",
+    "icons",
+    "component",
+    "lucide",
+    "RippleJS",
+    "ripple"
+  ],
+  "author": "Abraham Aremu <anubra266@gmail.com>",
+  "homepage": "https://github.com/anubra266/lucide-ripple#readme",
+  "license": "MIT",
+  "main": "src/index.ripple",
+  "repository": "https://github.com/anubra266/lucide-ripple/tree/main/packages/lucide-ripple",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/anubra266i/lucide-ripple/issues"
+  },
+  "scripts": {
+    "build": "pnpm clean && pnpm build:icons",
+    "clean": "rm -rf dist && rm -rf stats && rm -rf ./src/icons/*.ripple && rm -f index.js",
+    "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --exportFileName=index.ripple --iconFileExtension=.ripple --importImportFileExtension=.ripple --pretty=false",
+    "test": "echo \"No test specified\""
+  },
+  "peerDependencies": {
+    "ripple": ">=0.2.0"
+  },
+  "devDependencies": {
+    "@lucide/build-icons": "^1.1.0",
+    "@lucide/shared": "workspace:*",
+    "typescript": "~5.6.2"
+  }
+}

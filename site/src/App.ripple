@@ -1,0 +1,9 @@
+import { AArrowDown, ArrowDown } from 'lucide-ripple';
+
+export component App() {
+  <div class="page">
+    {"lucide"}
+    <AArrowDown class="text-red-500" />
+    <ArrowDown class="text-blue-500" />
+  </div>
+}

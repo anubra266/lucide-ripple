@@ -1,0 +1,30 @@
+{
+	"name": "site",
+	"version": "0.0.0",
+	"description": "",
+	"type": "module",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"start": "vite",
+		"dev": "vite",
+		"build": "NODE_ENV=production vite build",
+		"serve": "vite preview",
+		"format": "prettier --write .",
+		"format:check": "prettier --check ."
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@tailwindcss/vite": "^4.1.13",
+		"tailwindcss": "^4.1.13",
+		"typescript": "^5.9.2",
+		"vite": "^7.1.4",
+		"vite-plugin-ripple": "^0.2.29"
+	},
+	"dependencies": {
+		"@vercel/analytics": "^1.5.0",
+		"lucide-ripple": "workspace:*",
+		"ripple": "^0.2.60"
+	}
+}

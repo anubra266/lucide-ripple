@@ -1,0 +1,52 @@
+diff --git a/building/generateExportsFile.mjs b/building/generateExportsFile.mjs
+index 6badfaec6823bed4674c570f38199555a727dd6a..808611b6480903b7c102ae33b500acb0a64de2b8 100644
+--- a/building/generateExportsFile.mjs
++++ b/building/generateExportsFile.mjs
+@@ -25,7 +25,7 @@ export default (
+     } else if (exportModuleNameCasing === 'pascal') {
+       componentName = toPascalCase(iconName);
+     }
+-    const importString = `export { default as ${componentName} } from './${iconName}${iconFileExtension}';\n`;
++    const importString = `export { ${componentName} } from './${iconName}${iconFileExtension}';\n`;
+     appendFile(importString, fileName, outputDirectory);
+   });
+ 
+diff --git a/building/generateIconFiles.mjs b/building/generateIconFiles.mjs
+index 020af97b2153b81f4b436e73caa4b6d1830760f8..c62f068ef06ce2b44e18103a68dc3e02340a0f48 100644
+--- a/building/generateIconFiles.mjs
++++ b/building/generateIconFiles.mjs
+@@ -30,7 +30,7 @@ export default ({
+     const getSvg = () => readSvg(`${iconName}.svg`, iconsDir);
+     const { deprecated = false } = iconMetaData[iconName];
+ 
+-    const elementTemplate = template({ componentName, iconName, children, getSvg, deprecated });
++    const elementTemplate = await template({ componentName, iconName, children, getSvg, deprecated });
+     const output = pretty
+       ? prettier.format(elementTemplate, {
+           singleQuote: true,
+diff --git a/utils/getAliases.mjs b/utils/getAliases.mjs
+index 51b888ea36380bf98185e30cfb7bdf556d20f656..74e4c8b654436ee78dd6dc1ca7325cfd7ef2af3f 100644
+--- a/utils/getAliases.mjs
++++ b/utils/getAliases.mjs
+@@ -5,7 +5,7 @@ async function getAliases(iconDirectory) {
+   const iconJsons = readSvgDirectory(iconDirectory, '.json');
+   const aliasesEntries = await Promise.all(
+     iconJsons.map(async (jsonFile) => {
+-      const file = await import(path.join(iconDirectory, jsonFile), { assert: { type: 'json' } });
++      const file = await import(path.join(iconDirectory, jsonFile), { with: { type: 'json' } });
+       return [path.basename(jsonFile, '.json'), file.default];
+     })
+   );
+diff --git a/utils/getIconMetaData.mjs b/utils/getIconMetaData.mjs
+index bddca575fa67193d2938a3300750779e72dd5a61..eeaaf47d126ea32e1b6a9728adf7190ab7456f79 100644
+--- a/utils/getIconMetaData.mjs
++++ b/utils/getIconMetaData.mjs
+@@ -5,7 +5,7 @@ async function getIconMetaData(iconDirectory) {
+   const iconJsons = readSvgDirectory(iconDirectory, '.json');
+   const aliasesEntries = await Promise.all(
+     iconJsons.map(async (jsonFile) => {
+-      const file = await import(path.join(iconDirectory, jsonFile), { assert: { type: 'json' } });
++      const file = await import(path.join(iconDirectory, jsonFile), { with: { type: 'json' } });
+       return [path.basename(jsonFile, '.json'), file.default];
+     }),
+   );

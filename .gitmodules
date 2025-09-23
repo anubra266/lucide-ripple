@@ -1,0 +1,4 @@
+[submodule ".upstream/lucide"]
+	path = .upstream/lucide
+	url = https://github.com/lucide-icons/lucide
+	branch = main

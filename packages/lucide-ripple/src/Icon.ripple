@@ -1,0 +1,73 @@
+import { mergeClasses, hasA11yProp } from '@lucide/shared';
+import defaultAttributes from './defaultAttributes';
+import type { IconProps } from './types';
+
+/**
+ * Base Lucide Icon component for RippleJS
+ * 
+ * @component Icon
+ * @param {IconProps} props - The icon component props
+ * @returns {void} RippleJS component
+ */
+export component Icon({
+  color = 'currentColor',
+  size = 24,
+  strokeWidth = 2,
+  absoluteStrokeWidth = false,
+  name,
+  iconNode = [],
+  children,
+  ...rest
+}: IconProps) {
+
+  const computedStrokeWidth = absoluteStrokeWidth 
+    ? (Number(strokeWidth) * 24) / Number(size)
+    : strokeWidth;
+
+  const svgClasses = mergeClasses(
+    'lucide-icon',
+    'lucide',
+    name ? `lucide-${name}` : '',
+    rest.class
+  );
+
+  // Check if we should add aria-hidden
+  const shouldHideFromA11y = !children && !hasA11yProp(rest);
+
+  <svg
+    {...defaultAttributes}
+    {...rest}
+    width={size}
+    height={size}
+    stroke={color}
+    stroke-width={computedStrokeWidth}
+    //class={svgClasses}
+    {...(shouldHideFromA11y && { 'aria-hidden': 'true' })}
+  >
+    {/* Render icon paths */}
+    for (const [tag, attrs] of iconNode) {
+      if (tag === 'path') {
+        <path {...attrs} />
+      } else if (tag === 'circle') {
+        <circle {...attrs} />
+      } else if (tag === 'rect') {
+        <rect {...attrs} />
+      } else if (tag === 'line') {
+        <line {...attrs} />
+      } else if (tag === 'ellipse') {
+        <ellipse {...attrs} />
+      } else if (tag === 'polygon') {
+        <polygon {...attrs} />
+      } else if (tag === 'polyline') {
+        <polyline {...attrs} />
+      } else if (tag === 'g') {
+        <g {...attrs} />
+      }
+    }
+    
+    {/* Render children if provided */}
+    if (children) {
+      <children />
+    }
+  </svg>
+}
