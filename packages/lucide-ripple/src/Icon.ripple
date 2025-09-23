@@ -1,4 +1,4 @@
-import { mergeClasses, hasA11yProp } from '@lucide/shared';
+import { mergeClasses, hasA11yProp } from './utils';
 import defaultAttributes from './defaultAttributes';
 import type { IconProps } from './types';
 
@@ -41,7 +41,7 @@ export component Icon({
     height={size}
     stroke={color}
     stroke-width={computedStrokeWidth}
-    //class={svgClasses}
+    class={svgClasses}
     {...(shouldHideFromA11y && { 'aria-hidden': 'true' })}
   >
     {/* Render icon paths */}

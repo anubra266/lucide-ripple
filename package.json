@@ -15,5 +15,8 @@
     "patchedDependencies": {
       "@lucide/build-icons": "patches/@lucide__build-icons.patch"
     }
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
   }
 }
