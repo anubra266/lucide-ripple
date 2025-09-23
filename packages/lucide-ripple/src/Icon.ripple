@@ -32,6 +32,7 @@ export const hasA11yProp = (props: Record<string, any>) => {
     }
   }
 }
+
 /**
  * Base Lucide Icon component for RippleJS
  * 
