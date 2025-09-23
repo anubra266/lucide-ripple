@@ -23,7 +23,6 @@
 		"vite-plugin-ripple": "^0.2.29"
 	},
 	"dependencies": {
-		"@vercel/analytics": "^1.5.0",
 		"lucide-ripple": "workspace:*",
 		"ripple": "^0.2.60"
 	}
