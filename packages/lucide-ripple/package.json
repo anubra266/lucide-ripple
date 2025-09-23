@@ -19,6 +19,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "src"
+  ],
   "bugs": {
     "url": "https://github.com/anubra266i/lucide-ripple/issues"
   },
