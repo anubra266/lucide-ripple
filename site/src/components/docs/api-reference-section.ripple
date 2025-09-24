@@ -1,0 +1,90 @@
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card.ripple";
+
+const apiProps = [
+    {
+      prop: "size",
+      type: "number | string",
+      default: "24",
+      description: "Icon size in pixels",
+    },
+    {
+      prop: "color",
+      type: "string",
+      default: "currentColor",
+      description: "Icon color",
+    },
+    {
+      prop: "strokeWidth",
+      type: "number",
+      default: "2",
+      description: "Stroke width",
+    },
+    {
+      prop: "absoluteStrokeWidth",
+      type: "boolean",
+      default: "false",
+      description: "Whether strokeWidth is proportional to size",
+    },
+    {
+      prop: "...props",
+      type: "SVGProps",
+      default: "-",
+      description: "All standard SVG attributes",
+    },
+  ];
+
+  const tableHeaders = [
+    { label: "Prop", class: "text-left py-3 px-4 font-medium" },
+    { label: "Type", class: "text-left py-3 px-4 font-medium" },
+    { label: "Default", class: "text-left py-3 px-4 font-medium" },
+    { label: "Description", class: "text-left py-3 px-4 font-medium" },
+  ];
+
+  
+export component ApiReferenceSection() {
+    <section id="props" class="container mx-auto px-6 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">{"API Reference"}</h2>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>{"Icon Props"}</CardTitle>
+            <CardDescription>
+              {"All icons accept these properties"}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-border">
+                    for (const header of tableHeaders) {
+                        <th class={header.class}>
+                            {header.label}
+                        </th>
+                    }
+                  </tr>
+                </thead>
+                <tbody>
+                    for (const prop of apiProps) {
+                        <tr class="not-last:border-b border-border/50">
+                            <td class="py-3 px-4 font-mono text-primary">
+                                {prop.prop}
+                            </td>
+                            <td class="py-3 px-4 text-green-600 dark:text-green-400">
+                                {prop.type}
+                            </td>
+                            <td class="py-3 px-4 font-mono">{prop.default}</td>
+                            <td class="py-3 px-4">{prop.description}</td>
+                        </tr>
+                    }
+            
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+}

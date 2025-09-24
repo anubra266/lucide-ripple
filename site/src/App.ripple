@@ -1,9 +1,20 @@
-import { AArrowDown, ArrowDown } from 'lucide-ripple';
+import { Header } from './components/docs/header.ripple';
+import { HeroSection } from './components/docs/hero-section.ripple';
+import { InstallationSection } from './components/docs/installation-section.ripple';
+import { UsageSection } from './components/docs/usage-section.ripple';
+import { ApiReferenceSection } from './components/docs/api-reference-section.ripple';
+import { IconLibrarySection } from './components/docs/icon-library-section.ripple';
+
 
 export component App() {
-  <div class="page">
-    {"lucide"}
-    <AArrowDown class="text-red-500" />
-    <ArrowDown class="text-blue-500" />
-  </div>
+    <div class="fixed inset-0 grid-pattern opacity-50" />
+    <Header />
+
+    <main class="relative">
+        <HeroSection />
+        <InstallationSection />
+        <UsageSection />
+        <ApiReferenceSection />
+        //<IconLibrarySection />
+    </main>
 }

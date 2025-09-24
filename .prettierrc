@@ -1,0 +1,16 @@
+{
+  "useTabs": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "printWidth": 100,
+  "plugins": ["prettier-plugin-ripple"],
+  "overrides": [
+        {
+            "files": ["*.ripple"],
+            "options": {
+                "bracketSameLine": false,
+                "parser": "ripple"
+            }
+        }
+    ]
+}

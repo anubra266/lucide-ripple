@@ -10,12 +10,17 @@
 		"start": "vite",
 		"dev": "vite",
 		"build": "NODE_ENV=production vite build",
+		"prebuild:iconNodes": "node --experimental-strip-types ./scripts/writeIconNodes.mjs",
+		"prebuild:iconDetails": "node --experimental-strip-types ./scripts/writeIconDetails.mjs",
+		"prebuild": "pnpm prebuild:iconNodes && pnpm prebuild:iconDetails",
 		"serve": "vite preview",
 		"format": "prettier --write .",
 		"format:check": "prettier --check ."
 	},
 	"license": "MIT",
 	"devDependencies": {
+		"@lucide/build-icons": "^1.1.0",
+		"@lucide/helpers": "^1.0.0",
 		"@tailwindcss/vite": "^4.1.13",
 		"tailwindcss": "^4.1.13",
 		"typescript": "^5.9.2",
@@ -23,7 +28,13 @@
 		"vite-plugin-ripple": "^0.2.29"
 	},
 	"dependencies": {
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"fuse.js": "^7.1.0",
 		"lucide-ripple": "workspace:*",
-		"ripple": "^0.2.60"
+		"ripple": "^0.2.71",
+		"shiki": "^3.13.0",
+		"tailwind-merge": "^2.5.5",
+		"tw-animate-css": "1.3.3"
 	}
 }

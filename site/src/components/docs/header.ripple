@@ -1,0 +1,58 @@
+import { Button } from "../ui/button.ripple";
+import { ThemeToggle } from "../theme-toggle.ripple";
+import { Github, Sparkles } from "lucide-ripple";
+
+export component Header() {
+    <header class="sticky top-0 z-50 border-b border-border/50 backdrop-blur-sm bg-background/80">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <Sparkles class="w-5 h-5 text-primary-foreground" />
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-foreground">
+              {"Lucide Ripple"}
+            </h1>
+            <p class="text-sm text-muted-foreground">
+              {"Icons for Ripple JS"}
+            </p>
+          </div>
+        </div>
+        <nav class="hidden md:flex items-center gap-6">
+          <a
+            href="#installation"
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {"Installation"}
+          </a>
+          <a
+            href="#usage"
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {"Usage"}
+          </a>
+          <a
+            href="#props"
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {"Props"}
+          </a>
+          <a
+            href="#icons"
+            class="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            {"Icons"}
+          </a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <ThemeToggle />
+          <Button href="https://github.com/anubra266/lucide-ripple" target="_blank" variant="outline" size="sm">
+            <Github class="w-4 h-4 mr-2" />
+            {"GitHub"}
+          </Button>
+        </div>
+      </div>
+    </div>
+  </header>
+}

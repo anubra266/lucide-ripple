@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "prettier-plugin-ripple": "^0.2.68"
   }
 }

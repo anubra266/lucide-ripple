@@ -48,19 +48,13 @@ export component Icon({
   name,
   iconNode = [],
   children,
+  class: className = '',
   ...rest
 }: IconProps) {
 
   const computedStrokeWidth = absoluteStrokeWidth 
     ? (Number(strokeWidth) * 24) / Number(size)
     : strokeWidth;
-
-  const svgClasses = mergeClasses(
-    'lucide-icon',
-    'lucide',
-    name ? `lucide-${name}` : '',
-    rest.class
-  );
 
   // Check if we should add aria-hidden
   const shouldHideFromA11y = !children && !hasA11yProp(rest);
@@ -72,7 +66,7 @@ export component Icon({
     height={size}
     stroke={color}
     stroke-width={computedStrokeWidth}
-    class={svgClasses}
+    class={mergeClasses('lucide-icon', 'lucide', name ? `lucide-${name}` : '', className)}
     {...(shouldHideFromA11y && { 'aria-hidden': 'true' })}
   >
     {/* Render icon paths */}

@@ -52,12 +52,6 @@ pnpm add lucide-ripple
 
 ## Usage
 
-1. Head to the official [Lucide Docs](https://lucide.dev/icons/)
-2. Pick the icon you want.
-3. Click "Copy JSX".
-
-4. Use in your code:
-
 ```jsx
 import { AArrowDown } from "lucide-ripple";
 

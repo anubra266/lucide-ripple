@@ -1,0 +1,75 @@
+
+import { useCopy } from "../../lib/use-copy.ripple";
+import { Button } from "../ui/button.ripple";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card.ripple";
+import { Code } from "../code.ripple";
+import { Check, Copy } from "lucide-ripple";
+
+export component InstallationSection() {
+    let [copyInstall, copiedInstall] = useCopy()
+    let [copyImport, copiedImport] = useCopy()
+
+    <section id="installation" class="container mx-auto px-6 py-16">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">{"Installation"}</h2>
+
+        <Card class="mb-8">
+          <CardHeader>
+            <CardTitle>{"Install via npm"}</CardTitle>
+            <CardDescription>{"Add Lucide Ripple to your project"}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            const installCode = `npm install lucide-ripple`
+            <div class="rounded-lg p-4 relative">
+                <Code code={installCode} language="bash" />
+              <Button
+                size="sm"
+                variant="ghost"
+                class="absolute top-2 right-2"
+                onClick={() =>
+                  copyInstall(installCode)
+                }
+              >
+                if(@copiedInstall) {
+                      <Check class="w-4 h-4" />
+                } else {
+                    <Copy class="w-4 h-4" />
+                }
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>{"Import Icons"}</CardTitle>
+            <CardDescription>
+              {"Import individual icons."}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            const importCode = `import { Heart, Star, Home } from 'lucide-ripple'`
+            <div class="rounded-lg p-4 relative">
+              <Code code={importCode} language="javascript" />
+              <Button
+                size="sm"
+                variant="ghost"
+                class="absolute top-2 right-2"
+                onClick={() =>
+                  copyImport(
+                    importCode
+                  )
+                }
+              >
+                if(@copiedImport) {
+                    <Check class="w-4 h-4" />
+                } else {
+                    <Copy class="w-4 h-4" />
+                }
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+}

@@ -1,2 +1,4 @@
 node_modules/
 *.env
+src/lib/data/*
+!src/lib/data/.gitkeep

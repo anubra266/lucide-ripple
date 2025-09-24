@@ -1,0 +1,81 @@
+import { useCopy } from "../../lib/use-copy.ripple";
+import { Button } from "../ui/button.ripple";
+import { Check, Copy, Package, Sparkles, Zap, Shield } from "lucide-ripple";
+
+export component HeroSection() {
+    let [copy, copied] = useCopy()
+
+    <section class="container mx-auto px-6 py-12">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-start gap-6 mb-8">
+        <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+            <Sparkles class="w-8 h-8 text-primary" />
+        </div>
+        <div class="flex-1">
+          <h1 class="text-4xl font-bold text-balance mb-4">
+            {"Lucide Icons for Ripple JS"}
+          </h1>
+          <p class="text-lg text-muted-foreground text-balance mb-6 leading-relaxed">
+            {`A comprehensive port of `}
+            <a 
+              href="https://lucide.dev/icons/" 
+              target="_blank"
+              class="relative font-medium text-primary hover:text-primary/80 transition-all duration-200 group"
+            >
+              <span class="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                {`Lucide icons`}
+              </span>
+              <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary/80 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            {` optimized for the `}
+            <a 
+              href="https://ripplejs.com/" 
+              target="_blank"
+              class="relative font-medium text-primary hover:text-primary/80 transition-all duration-200 group"
+            >
+              <span class="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                {`Ripple JS`}
+              </span>
+              <span class="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-primary/80 transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            {` framework. Clean, consistent, and customizable SVG icons for
+            modern web applications.`}
+          </p>
+          <div class="flex items-center gap-4 mb-6">
+            const installCode = `npm install lucide-ripple`
+            <code class="bg-muted px-3 py-2 rounded-md text-sm text-foreground font-mono">
+              {installCode}
+            </code>
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() =>
+                copy(installCode)
+              }
+            >
+              if (@copied) {
+                <Check class="w-4 h-4" />
+              } else {
+                <Copy class="w-4 h-4" />
+              }
+            </Button>
+          </div>
+          <div class="flex items-center gap-4 text-sm text-muted-foreground">
+            <div class="flex items-center gap-2">
+              <Package class="w-4 h-4" />
+              <span>{`1,000+ icons`}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Zap class="w-4 h-4" />
+              <span>{`Tree-shakable`}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Shield class="w-4 h-4" />
+              <span>{`TypeScript`}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}

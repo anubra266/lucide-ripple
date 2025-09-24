@@ -1,0 +1,86 @@
+
+import { useCopy } from "../../lib/use-copy.ripple";
+import { Button } from "../ui/button.ripple";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card.ripple";
+import { Code } from "../code.ripple";
+import { Check, Copy } from "lucide-ripple";
+
+export component UsageSection() {
+    let [copyBasicUsage, copiedBasicUsage] = useCopy()
+    let [copyCustomStyling, copiedCustomStyling] = useCopy()
+
+    let basicUsageCode = `export component MyComponent() {
+  <Heart />
+  <Star class="text-yellow-500" />
+  <Home size={24} />
+}`;
+
+    let customStylingCode = `export component MyComponent() {
+  <Heart 
+    size={32}
+    color="red"
+    strokeWidth={1.5}
+    class="hover:scale-110 transition-transform"
+  />
+}`;
+
+    <section id="usage" class="container mx-auto px-6 py-16">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">{"Usage"}</h2>
+
+      <div class="space-y-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>{"Basic Usage"}</CardTitle>
+            <CardDescription>
+              {"Simple icon usage in your Ripple components"}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class=" rounded-lg p-4 relative">
+              <Code code={basicUsageCode} language="jsx" />
+              <Button
+                size="sm"
+                variant="ghost"
+                class="absolute top-2 right-2"
+                onClick={() => copyBasicUsage(basicUsageCode)}
+              >
+                if(@copiedBasicUsage) {
+                    <Check class="w-4 h-4" />
+                } else {
+                    <Copy class="w-4 h-4" />
+                }
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>{"With Custom Styling"}</CardTitle>
+            <CardDescription>
+              {"Customize icons with props and CSS classes"}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class=" rounded-lg p-4 relative">
+              <Code code={customStylingCode} language="jsx" />
+              <Button
+                size="sm"
+                variant="ghost"
+                class="absolute top-2 right-2"
+                onClick={() => copyCustomStyling(customStylingCode)}
+              >
+                if(@copiedCustomStyling) {
+                    <Check class="w-4 h-4" />
+                } else {
+                    <Copy class="w-4 h-4" />
+                }
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+}

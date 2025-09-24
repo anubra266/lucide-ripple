@@ -1,0 +1,33 @@
+import { useCopy } from "../../lib/use-copy.ripple";
+import { Card } from "../ui/card.ripple";
+import { Badge } from "../ui/badge.ripple";
+import { Icon } from "lucide-ripple";
+
+const toCamelCase = (string) =>
+    string.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2) =>
+      p2 ? p2.toUpperCase() : p1.toLowerCase(),
+    );
+    
+const toPascalCase = (string) => {
+    const camelCase = toCamelCase(string);
+    return (camelCase.charAt(0).toUpperCase() + camelCase.slice(1));
+};
+
+
+export component IconCard({ icon }) { 
+    let [copy, copied] = useCopy()
+    const name = toPascalCase(icon.name).replace(/\s/g, '')
+
+    <Card class="p-2 hover:bg-accent/50 transition-colors cursor-pointer group relative flex items-center justify-center"
+        onClick={() => copy(name)}
+    >
+        <Icon name={icon.name} iconNode={icon.iconNode} class="w-6 h-6 text-foreground group-hover:text-primary transition-colors" />
+        if(@copied) {
+             <div class="absolute inset-0 bg-primary/10 rounded-lg flex items-center justify-center">
+            <div class="bg-primary text-primary-foreground text-xs px-2 py-1 rounded">
+            {"Copied!"}
+            </div>
+        </div>
+        }
+  </Card>
+}

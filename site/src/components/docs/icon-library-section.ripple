@@ -1,0 +1,63 @@
+import { Button } from "../ui/button.ripple";
+import { Input } from "../ui/input.ripple";
+import { IconCard } from "./icon-card.ripple";
+import * as _iconDetails from "../../lib/data/iconDetails";
+import { useSearch } from "../../lib/use-search.ripple";
+
+import { keyed } from "ripple";
+import { track } from "ripple";
+
+import { Search } from "lucide-ripple";
+
+const iconDetails = Object.values(_iconDetails);
+
+export component IconLibrarySection() { 
+    let searchTerm = track("")
+
+    const results = useSearch(searchTerm, iconDetails,
+        [
+            { name: 'name', weight: 3 },
+            { name: 'tags', weight: 2 },
+            { name: 'categories', weight: 1 },
+        ]
+    )
+
+    <section id="icons" class="container mx-auto px-6 py-16">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">{"Icon Library"}</h2>
+
+        <div class="sticky top-20 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/50 py-6 mb-12">
+            <div class="flex justify-center">
+              <div class="relative w-full max-w-md">
+                <Search class="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search icons..."
+                  value={@searchTerm}
+                  onInput={(e) => @searchTerm = e.target.value}
+                  class="pl-10 h-11 text-base"
+                />
+              </div>
+            </div>
+        </div>
+
+        <div class="min-h-[90vh]">
+          <div class="text-sm text-muted-foreground mb-6">
+            {@results.length} {" icons"}
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-[repeat(auto-fit,minmax(40px,1fr))] gap-4">
+            for (const icon of keyed(@results, (item) => item.name)) {
+                  <IconCard icon={icon} />
+              }
+          </div>
+
+          if (@results.length === 0) {
+            <div class="text-center py-12">
+              <p class="text-muted-foreground">
+                {"No icons found matching your search."}
+              </p>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+}
