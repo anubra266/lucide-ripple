@@ -15,7 +15,7 @@ importers:
     dependencies:
       prettier-plugin-ripple:
         specifier: ^0.2.68
-        version: 0.2.75(prettier@2.7.1)
+        version: 0.2.76(prettier@2.7.1)
     devDependencies:
       typescript:
         specifier: ^5.9.2
@@ -25,7 +25,7 @@ importers:
     dependencies:
       ripple:
         specifier: '>=0.2.0'
-        version: 0.2.75
+        version: 0.2.76
     devDependencies:
       '@lucide/build-icons':
         specifier: ^1.1.0
@@ -52,8 +52,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/lucide-ripple
       ripple:
-        specifier: ^0.2.75
-        version: 0.2.75
+        specifier: ^0.2.76
+        version: 0.2.76
       shiki:
         specifier: ^3.13.0
         version: 3.13.0
@@ -84,7 +84,7 @@ importers:
         version: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)
       vite-plugin-ripple:
         specifier: ^0.2.29
-        version: 0.2.75
+        version: 0.2.76
 
 packages:
 
@@ -839,8 +839,8 @@ packages:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier-plugin-ripple@0.2.75:
-    resolution: {integrity: sha512-edKvc5vaL8U7JnUnGfHCHclz8uJ5G4wEl2EEqiTl6/eDIEi0FzShFnUwx3+1ilQPaJScMYldkJ1uNCK91aBazA==}
+  prettier-plugin-ripple@0.2.76:
+    resolution: {integrity: sha512-LvrhkujaZQv9KaNKtPh47l+vpls41JUCziQf/4SNGv+ZdzlKM86ndhmKFXaOeJ5TO+R44HjiEmSplYz40X9H9Q==}
     peerDependencies:
       prettier: '>=2.0.0'
 
@@ -865,8 +865,8 @@ packages:
     resolution: {integrity: sha512-U7XpAktpbSgHTRSNRrjKSrjYkZKuhUukfoBlXWXUExCAqhzh1TU3BDRAfJmarcl5voKS+pbKU9MvyLWKZ4UEEg==}
     engines: {node: '>= 0.8.0'}
 
-  ripple@0.2.75:
-    resolution: {integrity: sha512-SpaI7c+JayYq7IOY5SgzbS1ifbQXVsHuxVfkV/+QavC7eB3G7d55ROka8xfdxiAOw3nc1LzhRDvMlfAncqLx/w==}
+  ripple@0.2.76:
+    resolution: {integrity: sha512-TWCgOlzd17ux4a0OHj84AFyItAmHlqHyTO4ZrYMN/ob4hVb9VIolMsRyXxnbBFf0+N0KdX3EnrC/Pjc6jCHFuw==}
 
   rollup@4.52.2:
     resolution: {integrity: sha512-I25/2QgoROE1vYV+NQ1En9T9UFB9Cmfm2CJ83zZOlaDpvz29wGQSZXWKw7MiNXau7wYgB/T9fVIdIuEQ+KbiiA==}
@@ -949,8 +949,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite-plugin-ripple@0.2.75:
-    resolution: {integrity: sha512-j+4KHHo2I0GMm+laJayIzO1jJSYVZRhyjash7EAmZ1M3DD2MkiAbr8EpLqZ4OWDZhLLH5WO1D8ZwtMxdda++Cw==}
+  vite-plugin-ripple@0.2.76:
+    resolution: {integrity: sha512-Fo7zeMGoh0FmqIP1IHV8dY23ZtK3sxEvBxMozqcizS7EC/U1iw53pj0amM0TYE/2LkvHin2bnpiKsRWTDKonag==}
 
   vite@7.1.7:
     resolution: {integrity: sha512-VbA8ScMvAISJNJVbRDTJdCwqQoAareR/wutevKanhR2/1EkoXVZVkkORaYm/tNVCjP/UDTKtcw3bAkwOUdedmA==}
@@ -1615,7 +1615,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  prettier-plugin-ripple@0.2.75(prettier@2.7.1):
+  prettier-plugin-ripple@0.2.76(prettier@2.7.1):
     dependencies:
       prettier: 2.7.1
 
@@ -1635,7 +1635,7 @@ snapshots:
 
   rename-keys@1.2.0: {}
 
-  ripple@0.2.75:
+  ripple@0.2.76:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
       acorn: 8.15.0
@@ -1769,7 +1769,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-plugin-ripple@0.2.75: {}
+  vite-plugin-ripple@0.2.76: {}
 
   vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1):
     dependencies:
