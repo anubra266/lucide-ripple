@@ -3,3 +3,4 @@ node_modules
 dist
 build
 site-build
+packages/lucide-ripple/src/icons/*.ripple
