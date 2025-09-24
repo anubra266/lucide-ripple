@@ -52,8 +52,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/lucide-ripple
       ripple:
-        specifier: ^0.2.71
-        version: 0.2.71
+        specifier: ^0.2.73
+        version: 0.2.73
       shiki:
         specifier: ^3.13.0
         version: 3.13.0
@@ -874,8 +874,8 @@ packages:
   ripple@0.2.60:
     resolution: {integrity: sha512-UCxvrthshml9LdMuPAbJZxPX9/fMEX73W53j4ZxfcZy3hNv+a1FZClPXWvTqW2paMVCu713UYMMXtkUn70r50A==}
 
-  ripple@0.2.71:
-    resolution: {integrity: sha512-CcdubslgcHwGhHRt0NI/9IrQRHETJczmhmpOoUIi/isy4qe/Qs8SkkHCz22rX6eTc0oQECJT7x9hO3Tx8BowOA==}
+  ripple@0.2.73:
+    resolution: {integrity: sha512-f/5FY63k56sxliR6eNaM0kERK6eXoPGceeqXk1474+MkOn3PeVRwW0UdIJwBH14EcX5bvRuK1URF5XT3D4Ydhw==}
 
   rollup@4.52.0:
     resolution: {integrity: sha512-+IuescNkTJQgX7AkIDtITipZdIGcWF0pnVvZTWStiazUmcGA2ag8dfg0urest2XlXUi9kuhfQ+qmdc5Stc3z7g==}
@@ -1670,7 +1670,7 @@ snapshots:
       muggle-string: 0.4.1
       zimmerframe: 1.1.4
 
-  ripple@0.2.71:
+  ripple@0.2.73:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
       acorn: 8.15.0
