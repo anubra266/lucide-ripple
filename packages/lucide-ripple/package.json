@@ -29,8 +29,7 @@
     "build": "pnpm clean && pnpm build:icons",
     "clean": "rm -rf dist && rm -rf stats && rm -rf ./src/icons/*.ripple && rm -f index.js",
     "build:icons": "build-icons --output=./src --templateSrc=./scripts/exportTemplate.mts --exportFileName=index.ripple --iconFileExtension=.ripple --importImportFileExtension=.ripple --pretty=false",
-    "test": "echo \"No test specified\"",
-    "postinstall": "pnpm build"
+    "test": "echo \"No test specified\""
   },
   "peerDependencies": {
     "ripple": ">=0.2.0"
