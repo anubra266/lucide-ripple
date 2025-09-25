@@ -5,7 +5,8 @@
   "scripts": {
     "icons:sync": "git submodule update --remote --merge .upstream/lucide",
     "test": "echo \"No test specified\"",
-    "site": "pnpm --filter=./site"
+    "site": "pnpm --filter=./site",
+    "postinstall": "pnpm --filter=./packages/lucide-ripple build"
   },
   "keywords": [],
   "author": "anubra266",
