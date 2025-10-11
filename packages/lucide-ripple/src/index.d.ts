@@ -1,4 +1,4 @@
-import type { LucideIcon, IconProps, Component, LucideProps, IconNode, SVGAttributes } from './types';
+import type { LucideIcon, IconProps, Component, LucideProps, IconNode, SVGAttributes } from './types.d.ts';
 
 // Re-export types
 export type { LucideIcon, IconProps, Component, LucideProps, IconNode, SVGAttributes };
