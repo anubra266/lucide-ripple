@@ -99,7 +99,16 @@ export interface IconProps extends LucideProps {
 /**
  * Component type in RippleJS - represents a Ripple component function
  */
-export type Component<T = any> = (props: T) => void;
+export type Component = {
+	c: null | Map<Context<any>, any>;
+	e: null | Array<{
+		b: Block;
+		fn: Function;
+		r: null | Block | Derived;
+	}>;
+	p: null | Component;
+	m: boolean;
+};
 
 /**
  * Type for Lucide icon components
