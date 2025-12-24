@@ -4,7 +4,6 @@ import { IconCard } from "./icon-card.ripple";
 import * as _iconDetails from "../../lib/data/iconDetails";
 import { useSearch } from "../../lib/use-search.ripple";
 
-import { keyed } from "ripple";
 import { track } from "ripple";
 
 import { Search } from "lucide-ripple";
@@ -45,7 +44,7 @@ export component IconLibrarySection() {
             {@results.length} {" icons"}
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-[repeat(auto-fit,minmax(40px,1fr))] gap-4">
-            for (const icon of keyed(@results, (item) => item.name)) {
+            for (const icon of @results; key icon.name) {
                   <IconCard icon={icon} />
               }
           </div>

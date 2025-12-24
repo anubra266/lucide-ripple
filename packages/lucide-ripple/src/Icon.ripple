@@ -40,17 +40,19 @@ export const hasA11yProp = (props: Record<string, any>) => {
  * @param {IconProps} props - The icon component props
  * @returns {void} RippleJS component
  */
-export component Icon({
-  color = 'currentColor',
-  size = 24,
-  strokeWidth = 2,
-  absoluteStrokeWidth = false,
-  name,
-  iconNode = [],
-  children,
-  class: className = '',
-  ...rest
-}: IconProps) {
+export component Icon(props: IconProps) {
+
+  const {
+    color = 'currentColor',
+    size = 24,
+    strokeWidth = 2,
+    absoluteStrokeWidth = false,
+    name,
+    iconNode = [],
+    children,
+    class: className = '',
+    ...rest
+  } = props;
 
   const computedStrokeWidth = absoluteStrokeWidth 
     ? (Number(strokeWidth) * 24) / Number(size)
@@ -69,29 +71,36 @@ export component Icon({
     class={mergeClasses('lucide-icon', 'lucide', name ? `lucide-${name}` : '', className)}
     {...(shouldHideFromA11y && { 'aria-hidden': 'true' })}
   >
-    {/* Render icon paths */}
     for (const [tag, attrs] of iconNode) {
-      if (tag === 'path') {
-        <path {...attrs} />
-      } else if (tag === 'circle') {
-        <circle {...attrs} />
-      } else if (tag === 'rect') {
-        <rect {...attrs} />
-      } else if (tag === 'line') {
-        <line {...attrs} />
-      } else if (tag === 'ellipse') {
-        <ellipse {...attrs} />
-      } else if (tag === 'polygon') {
-        <polygon {...attrs} />
-      } else if (tag === 'polyline') {
-        <polyline {...attrs} />
-      } else if (tag === 'g') {
-        <g {...attrs} />
-      }
+          switch (tag) {
+            case 'path':
+              <path {...attrs} />
+              break;
+            case 'circle':
+              <circle {...attrs} />
+              break;
+            case 'rect':
+              <rect {...attrs} />
+              break;
+            case 'line':
+              <line {...attrs} />
+              break;
+            case 'ellipse':
+              <ellipse {...attrs} />
+              break;
+            case 'polygon':
+              <polygon {...attrs} />
+              break;
+            case 'polyline':
+              <polyline {...attrs} />
+              break;
+            case 'g':
+              <g {...attrs} />
+              break;
+          }
     }
     
-    {/* Render children if provided */}
-    if (children) {
+    if(children) {
       <children />
     }
   </svg>
