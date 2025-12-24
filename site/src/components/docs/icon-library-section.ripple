@@ -44,7 +44,7 @@ export component IconLibrarySection() {
             {@results.length} {" icons"}
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-[repeat(auto-fit,minmax(40px,1fr))] gap-4">
-            for (const icon of @results; key icon.name) {
+            for (const icon of @results; index _idx; key icon.name) {
                   <IconCard icon={icon} />
               }
           </div>
