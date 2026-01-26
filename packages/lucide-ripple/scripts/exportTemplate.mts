@@ -25,9 +25,7 @@ const iconNode: IconNode = ${JSON.stringify(children)};
  */
 export component ${componentName}(props: LucideProps) {
   <Icon name="${iconName}" iconNode={iconNode} {...props}>
-    if (props.children) {
-      <props.children />
-    }
+    <props.children />
   </Icon>
 }
 `;
