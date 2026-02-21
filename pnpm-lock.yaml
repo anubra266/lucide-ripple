@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  ripple: https://pkg.pr.new/ripple@722
+
 patchedDependencies:
   '@lucide/build-icons':
     hash: erhzvt4ix3shgt7pzuqkwqfiui
@@ -24,8 +27,8 @@ importers:
   packages/lucide-ripple:
     dependencies:
       ripple:
-        specifier: '>=0.2.0'
-        version: 0.2.76
+        specifier: https://pkg.pr.new/ripple@722
+        version: https://pkg.pr.new/ripple@722
     devDependencies:
       '@lucide/build-icons':
         specifier: ^1.1.0
@@ -36,6 +39,9 @@ importers:
 
   site:
     dependencies:
+      '@ripple-ts/vite-plugin':
+        specifier: ^0.2.213
+        version: 0.2.213
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0
@@ -47,10 +53,10 @@ importers:
         version: 2.1.1
       eslint-parser-ripple:
         specifier: ^0.2.152
-        version: 0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@0.2.212)
+        version: 0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@https://pkg.pr.new/ripple@722)
       eslint-plugin-ripple:
         specifier: ^0.2.152
-        version: 0.2.152(eslint-parser-ripple@0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@0.2.212))(eslint@9.39.2(jiti@2.6.0))
+        version: 0.2.152(eslint-parser-ripple@0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@https://pkg.pr.new/ripple@722))(eslint@9.39.2(jiti@2.6.0))
       fuse.js:
         specifier: ^7.1.0
         version: 7.1.0
@@ -59,10 +65,10 @@ importers:
         version: link:../packages/lucide-ripple
       prettier-plugin-ripple:
         specifier: ^0.2.152
-        version: 0.2.152(prettier@2.7.1)(ripple@0.2.212)
+        version: 0.2.152(prettier@2.7.1)(ripple@https://pkg.pr.new/ripple@722)
       ripple:
-        specifier: ^0.2.212
-        version: 0.2.212
+        specifier: https://pkg.pr.new/ripple@722
+        version: https://pkg.pr.new/ripple@722
       shiki:
         specifier: ^3.13.0
         version: 3.13.0
@@ -91,9 +97,6 @@ importers:
       vite:
         specifier: ^7.1.4
         version: 7.1.7(jiti@2.6.0)(lightningcss@1.30.1)
-      vite-plugin-ripple:
-        specifier: ^0.2.152
-        version: 0.2.152
 
 packages:
 
@@ -334,6 +337,9 @@ packages:
 
   '@lucide/helpers@1.0.0':
     resolution: {integrity: sha512-9dfxrgLLaoCfr3R/eh6wwlUcY+ZPdEv6SDwFMUhYoO6HhGL8yN8hb5ZwI/OfzbK9mdJpa+jYfwP4nF4ZlZwZLA==}
+
+  '@ripple-ts/vite-plugin@0.2.213':
+    resolution: {integrity: sha512-DTGmsQF5TXsaavUhkJ3rag/bdyqqWQfqfctvmZ3p1Jg7JPK9AxDslLh4+QZIuS41015sBhzthz9lcLVQwPvkxw==}
 
   '@rollup/rollup-android-arm-eabi@4.52.2':
     resolution: {integrity: sha512-o3pcKzJgSGt4d74lSZ+OCnHwkKBeAbFDmbEm5gg70eA8VkyCuC/zV9TwBnmw6VjDlRdF4Pshfb+WE9E6XY1PoQ==}
@@ -777,13 +783,15 @@ packages:
 
   eslint-parser-ripple@0.2.152:
     resolution: {integrity: sha512-OYkScJodICDdgT40yzo79TMaY8Wo4HhtJWrPsuN5EUGhnR1ySvTZVmtCh9JAHuDpeDKFJ+inMKB2hV3fk6baIQ==}
+    version: 0.2.152
     engines: {node: '>=20.0.0'}
     peerDependencies:
       eslint: '>=9.0.0'
-      ripple: '*'
+      ripple: https://pkg.pr.new/ripple@722
 
   eslint-plugin-ripple@0.2.152:
     resolution: {integrity: sha512-nMI5vjivLHy+SY1n9gHfuZ3TVzKlMT2BwsqDD9IrbH7+Nnb3Tnqxx1mO8UyFhPOSSvF4pQv+WSKvuxr1siXyyg==}
+    version: 0.2.152
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@typescript-eslint/parser': ^8.20.0
@@ -1162,9 +1170,10 @@ packages:
 
   prettier-plugin-ripple@0.2.152:
     resolution: {integrity: sha512-snb1j64I/U7vNoMK5Tr44Pj79cu0+Fa3B9GheCTLkf2AUov7nWAyBU5rNYA+9WsIycTsP4Pp7ZQAmVMuiRY0yQ==}
+    version: 0.2.152
     peerDependencies:
       prettier: '>=2.0.0'
-      ripple: '*'
+      ripple: https://pkg.pr.new/ripple@722
 
   prettier-plugin-ripple@0.2.76:
     resolution: {integrity: sha512-LvrhkujaZQv9KaNKtPh47l+vpls41JUCziQf/4SNGv+ZdzlKM86ndhmKFXaOeJ5TO+R44HjiEmSplYz40X9H9Q==}
@@ -1200,13 +1209,11 @@ packages:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
 
-  ripple@0.2.212:
-    resolution: {integrity: sha512-uympB5lNfCkH7+ITqkgqgW7o8MXLFb3jMQQdN8t+E86pwmBpkKtoit1aTjoPVM7aOpcM7vvHS/abrF1DU+/9AA==}
+  ripple@https://pkg.pr.new/ripple@722:
+    resolution: {tarball: https://pkg.pr.new/ripple@722}
+    version: 0.2.213
     peerDependencies:
-      ripple: 0.2.212
-
-  ripple@0.2.76:
-    resolution: {integrity: sha512-TWCgOlzd17ux4a0OHj84AFyItAmHlqHyTO4ZrYMN/ob4hVb9VIolMsRyXxnbBFf0+N0KdX3EnrC/Pjc6jCHFuw==}
+      ripple: https://pkg.pr.new/ripple@722
 
   rollup@4.52.2:
     resolution: {integrity: sha512-I25/2QgoROE1vYV+NQ1En9T9UFB9Cmfm2CJ83zZOlaDpvz29wGQSZXWKw7MiNXau7wYgB/T9fVIdIuEQ+KbiiA==}
@@ -1311,9 +1318,6 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
-
-  vite-plugin-ripple@0.2.152:
-    resolution: {integrity: sha512-VVwuYe3XJm4oDhRtkIvTKNORGum9I8bNDpBFrCrJ/aNmcUkSOKW32VYOExDfciU6Ls9lx9VlZVQuHUnwFGWsDw==}
 
   vite@7.1.7:
     resolution: {integrity: sha512-VbA8ScMvAISJNJVbRDTJdCwqQoAareR/wutevKanhR2/1EkoXVZVkkORaYm/tNVCjP/UDTKtcw3bAkwOUdedmA==}
@@ -1558,6 +1562,8 @@ snapshots:
       svgson: 5.3.1
 
   '@lucide/helpers@1.0.0': {}
+
+  '@ripple-ts/vite-plugin@0.2.213': {}
 
   '@rollup/rollup-android-arm-eabi@4.52.2':
     optional: true
@@ -1927,18 +1933,18 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-parser-ripple@0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@0.2.212):
+  eslint-parser-ripple@0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@https://pkg.pr.new/ripple@722):
     dependencies:
       acorn: 8.15.0
       acorn-typescript: 1.4.13(acorn@8.15.0)
       eslint: 9.39.2(jiti@2.6.0)
-      ripple: 0.2.212
+      ripple: https://pkg.pr.new/ripple@722
 
-  eslint-plugin-ripple@0.2.152(eslint-parser-ripple@0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@0.2.212))(eslint@9.39.2(jiti@2.6.0)):
+  eslint-plugin-ripple@0.2.152(eslint-parser-ripple@0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@https://pkg.pr.new/ripple@722))(eslint@9.39.2(jiti@2.6.0)):
     dependencies:
       eslint: 9.39.2(jiti@2.6.0)
     optionalDependencies:
-      eslint-parser-ripple: 0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@0.2.212)
+      eslint-parser-ripple: 0.2.152(eslint@9.39.2(jiti@2.6.0))(ripple@https://pkg.pr.new/ripple@722)
 
   eslint-scope@8.4.0:
     dependencies:
@@ -2299,10 +2305,10 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-ripple@0.2.152(prettier@2.7.1)(ripple@0.2.212):
+  prettier-plugin-ripple@0.2.152(prettier@2.7.1)(ripple@https://pkg.pr.new/ripple@722):
     dependencies:
       prettier: 2.7.1
-      ripple: 0.2.212
+      ripple: https://pkg.pr.new/ripple@722
 
   prettier-plugin-ripple@0.2.76(prettier@2.7.1):
     dependencies:
@@ -2328,7 +2334,7 @@ snapshots:
 
   resolve-from@4.0.0: {}
 
-  ripple@0.2.212:
+  ripple@https://pkg.pr.new/ripple@722:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
       '@sveltejs/acorn-typescript': 1.0.9(acorn@8.15.0)
@@ -2340,18 +2346,7 @@ snapshots:
       is-reference: 3.0.3
       magic-string: 0.30.19
       muggle-string: 0.4.1
-      ripple: 0.2.212
-      zimmerframe: 1.1.4
-
-  ripple@0.2.76:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
-      acorn: 8.15.0
-      acorn-typescript: 1.4.13(acorn@8.15.0)
-      esrap: 2.1.0
-      is-reference: 3.0.3
-      magic-string: 0.30.19
-      muggle-string: 0.4.1
+      ripple: https://pkg.pr.new/ripple@722
       zimmerframe: 1.1.4
 
   rollup@4.52.2:
@@ -2496,8 +2491,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
-
-  vite-plugin-ripple@0.2.152: {}
 
   vite@7.1.7(jiti@2.6.0)(lightningcss@1.30.1):
     dependencies:

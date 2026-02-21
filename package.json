@@ -15,6 +15,9 @@
   "pnpm": {
     "patchedDependencies": {
       "@lucide/build-icons": "patches/@lucide__build-icons.patch"
+    },
+    "overrides": {
+      "ripple": "https://pkg.pr.new/ripple@722"
     }
   },
   "devDependencies": {
